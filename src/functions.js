@@ -1,29 +1,64 @@
+const MIN = 1;
+const MAX = 600;
+let pokeData = [];
+let id = 0;
 
-async function setOneRandom(data, showData, setId) {
-    var item = data[Math.floor(Math.random() * data.length)];
-    var pokeData = await getPokemonData(item?.url);
-    
-    var res = {
-        name: item?.name,
-        ...pokeData
-    };
-    console.log(res)
-    if(res){
-        showData(res);
-        setId(res?.id);
+async function setOneRandom(setShowPoke, setCurrentId, setMessage, url) {
+    let index = Math.floor(Math.random() * (MAX - MIN + 1) + MIN);
+    pokeData = await getPokemonData(url + index);
+
+    if (pokeData) {
+        setShowPoke(pokeData);
+        setCurrentId(pokeData?.id);
+        setMessage({
+            msg: '',
+            action: false
+        });
+    }
+
+}
+
+async function setNext(setShowPoke, currentId, setCurrentId, setMessage, url) {
+    id = currentId + 1;
+    if (
+        id > MIN || id <= MAX
+    ) {
+        pokeData = await getPokemonData(url + id);
+        if(pokeData){
+            setShowPoke(pokeData);
+            setCurrentId(id);
+        }
+    } else {
+        setMessage({
+            msg: 'Id fuera de rango',
+            action: true
+        });
     }
 }
 
-function setNext(data, showData, setId) {
-
+async function setPrevious(setShowPoke, currentId, setCurrentId, setMessage, url) {
+    id = currentId - 1;
+    if (
+        id > MIN || id <= MAX
+    ) {
+        pokeData = await getPokemonData(url + id);
+        if(pokeData){
+            setShowPoke(pokeData);
+            setCurrentId(id);
+        }
+    } else {
+        setMessage({
+            msg: 'Id fuera de rango',
+            action: true
+        });
+    }
 }
 
-function setPrevious(data, showData, setId) {
-
-}
-
-function setAbilities(id, data) {
-    return [];
+async function setAbilities(data) {
+  return data?.abilities.map(async (current) => {
+        let abilityInfo = await getPokemonData(current?.ability?.url);
+        return abilityInfo;
+   });
 }
 
 async function getPokemonData(url) {
@@ -31,8 +66,6 @@ async function getPokemonData(url) {
     const json = await response.json();
     return json;
 }
-
-
 
 export {
     setOneRandom,
