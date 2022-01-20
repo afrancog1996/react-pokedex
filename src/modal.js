@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 
-const Modal =  ({ setOpen, data }) => {
+const Modal = ({ setOpen, data }) => {
 
     const [ABILITY, SET_ABILITY] = useState([]);
 
-    useEffect( async() => {
-         await data.then(
+    useEffect(() => {
+        data.then(
             (res) => {
                 SET_ABILITY(res);
             }
