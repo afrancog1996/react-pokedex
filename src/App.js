@@ -26,10 +26,10 @@ const App = () => {
           <h1 className='Title'>ID: {CURRENT_ID}</h1>
           <h1 className='Title'>NAME: {SHOW_POKE?.name}</h1>
           <div className='poke-1'>
-            <img src={SHOW_POKE?.sprites?.back_default}></img>
+            <img src={SHOW_POKE?.sprites?.back_default} alt='pokemon back'></img>
           </div>
           <div className='poke-2'>
-            <img src={SHOW_POKE?.sprites?.front_default}></img>
+            <img src={SHOW_POKE?.sprites?.front_default} alt='pokemon front'></img>
           </div>
         </div>
         <div className='Container-button'>
