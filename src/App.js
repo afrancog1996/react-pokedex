@@ -25,7 +25,7 @@ const App = () => {
     <div className="App">
       <div className='container'>
         {MESSAGE.action && <h1>{MESSAGE.msg}</h1>}
-        <a href='' className='link'>GITHUB</a>
+        <a href='https://github.com/afrancog1996/react-pokedex' className='link'>GITHUB</a>
         <div className='Container-pokemons'>
           <h1 className='Title'>ID: {CURRENT_ID}</h1>
           <h1 className='Title'>NAME: {SHOW_POKE?.name}</h1>
