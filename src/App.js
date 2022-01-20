@@ -1,13 +1,9 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import Modal from './modal';
 import {
-  setOneRandom,
-  setNext,
-  setPrevious,
-  setAbilities
+  setAbilities, setNext, setOneRandom, setPrevious
 } from './functions';
-import { useEffect, useState } from 'react';
+import Modal from './modal';
 
 const App = () => {
 
