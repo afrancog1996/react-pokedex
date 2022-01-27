@@ -8,10 +8,6 @@ import Img from './components/img-component/img-component';
 function App() {
 
 
-  const [data, setData] = useState([]);
-
-
-
 
   return (
     <div className="App">
@@ -19,7 +15,7 @@ function App() {
         <h1>
           Make with <HeartFillIcon size='medium' aria-label='heard' fill='#ff0000' /> by aFrancog
         </h1>
-        <a className='App-link' target='_blank' href="https://github.com/afrancog1996/react-pokedex.git">GITHUB</a>
+        <a className='App-link' target='_blank' rel='noreferrer' href="https://github.com/afrancog1996/react-pokedex.git">GITHUB</a>
       </header>
       <main className='Main'>
         <div className='ctl-search'>
