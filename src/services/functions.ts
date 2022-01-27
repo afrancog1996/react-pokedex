@@ -59,10 +59,6 @@ export async function getPrevius(data: any, setData: any) {
     }
 }
 
-export function getabilityById(data: any) {
-    console.log(data);
-}
-
 
 async function getInfo(param: string = '', setData?: any) {
     if (param !== '') {

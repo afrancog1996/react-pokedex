@@ -1,11 +1,11 @@
 import {
   HeartFillIcon
 } from '@primer/octicons-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './App.css';
 import Img from './components/img-component/img-component';
-import { getRandom, getNext, getPrevius, searchByName } from './services/functions';
 import Modal from './components/modal-component/modal-component';
+import { getNext, getPrevius, getRandom, searchByName } from './services/functions';
 
 function App() {
 
