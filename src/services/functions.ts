@@ -7,7 +7,7 @@ let pokeData: any = [];
 export async function searchByName(ref: any, setData: any) {
     if (ref?.current?.value !== '') {
         try {
-            pokeData = await getInfo(ref?.current?.value, setData);
+            pokeData = await getInfo(ref?.current?.value);
             setData(pokeData);
         } catch (e) {
             setData({
