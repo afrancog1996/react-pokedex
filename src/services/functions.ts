@@ -1,9 +1,8 @@
 const END_POINT_POKE_API: string = 'https://pokeapi.co/api/v2/pokemon/';
-const ABILITIES: string = 'ability';
 const MIN: number = 1; // you can modify this constant to min limit
 const MAX: number = 20; // you can modify this contant to max limit
 let pokeData: any = [];
-let id: number = 0;
+
 
 export async function searchByName(ref: any, setData: any) {
     if (ref?.current?.value !== '') {
@@ -60,7 +59,7 @@ export async function getPrevius(data: any, setData: any) {
 }
 
 
-async function getInfo(param: string = '', setData?: any) {
+async function getInfo(param: string = '') {
     if (param !== '') {
         const response = await fetch(END_POINT_POKE_API + param);
         const json = await response.json();
