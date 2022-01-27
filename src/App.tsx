@@ -1,7 +1,7 @@
 import {
   HeartFillIcon
 } from '@primer/octicons-react';
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Img from './components/img-component/img-component';
 
